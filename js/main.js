@@ -3,7 +3,7 @@
 jQuery(document).ready(function($) 
 {
     var id = 1;
-    var arr = [0,0,0,0,0,0,0,0,0,0];// Keeps track of different commands(i.e., if they are completed or not)
+    var arr = [0,0,0,0,0,0,0,0,0,0,0];// Keeps track of different commands(i.e., if they are completed or not)
                                     // 0 -> not completed
                                     // 1 -> completed 
                                     // added 1 more position
@@ -28,6 +28,7 @@ jQuery(document).ready(function($)
             this.echo('> rm ------------- ' + task[arr[7]]);
             this.echo('> mkdir ---------- ' + task[arr[8]]);
             this.echo('> clear -----------' + task[arr[9]]);
+            this.echo('> date ----------- ' + task[arr[10]]);
             this.echo('\n');
         },
         echo: function(arg1) {
@@ -57,6 +58,8 @@ jQuery(document).ready(function($)
         cd: function(arg1) {
 
             // to add wrong directory error 
+            
+            arr[3] = 1;
 
             this.echo("> cd stands for Change Directory. You just changed your directory.");
             this.echo("> You can check your present directory by typing [[b;#ff3300;]pwd]."); 
@@ -72,11 +75,10 @@ jQuery(document).ready(function($)
                     this.echo('you will get something like -> /home/lterm/ since you were on /home/lterm/Documents'  );
                     this.echo('Type [[b;#ff3300;]cd ~] to continue');
                     this.echo('Type [[b;#ff3300;]exit] to exit [[b;#ff3300;]cd] command and then [[b;#ff3300;]cat hello.txt] to continue.');
-1
+
                 }
                 else if(cmd == 'cd ~')
                 {
-                    arr[3] = 1;
                     this.echo('Type [[b;#ff3300;]cd ..] to continue');
                     this.echo('Type [[b;#ff3300;]exit] to exit [[b;#ff3300;]cd] command and then [[b;#ff3300;]cat hello.txt] to continue.');
                 }
@@ -188,6 +190,11 @@ jQuery(document).ready(function($)
                     this.echo('[[b;#ff3300;]Wrong step commands. Type the exact commands requested.]\n');
             });
         },
+        date: function() {
+            arr[10]=1;
+            this.echo(Date());
+        },
+
 
         calc: {
             add: function(a, b) {
