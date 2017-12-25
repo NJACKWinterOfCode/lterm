@@ -10,11 +10,11 @@
 
 Check out the site live at  -->  [![lterm](https://img.shields.io/badge/website-live-brightgreen.svg?style=flat-square)](https://sr6033.github.io/lterm/)	[![Gitter](https://badges.gitter.im/gitterHQ/gitter.svg)](https://gitter.im/lterm/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
-**lterm** is an online **Terminal Emulator**. It is a step by step tutorial that will teach you the **bash** commands by making you execute them. 
+**lterm** is an online **Terminal Emulator**. It is a step by step tutorial that will teach you the **bash** commands by making you execute them.
 
 *Nothing is better than learning by doing.*
 
-It is fully online and doesn't require any extra shitty access. Being an emulator, it only virtualizes a terminal environment and so the commands executed doesn't effect either the server or your local machine. 
+It is fully online and doesn't require any extra shitty access. Being an emulator, it only virtualizes a terminal environment and so the commands executed doesn't effect either the server or your local machine.
 
 ### List of commands available presently
 
@@ -29,23 +29,23 @@ It is fully online and doesn't require any extra shitty access. Being an emulato
 - `cp`/`mv`
 - `mkdir`
 
-### Contributing 
+### Contributing
 
-- Developers who want to contribute, [![fork](https://img.shields.io/badge/style-0-green.svg?style=social&label=Fork&link=https://github.com/sr6033/lterm/fork&link=https://github.com/sr6033/lterm/network)](https://github.com/sr6033/lterm/fork) this repo and edit the file **<a href="https://github.com/sr6033/lterm/blob/master/js/main.js">main.js</a>** to add your commands. 
+- Developers who want to contribute, [![fork](https://img.shields.io/badge/style-0-green.svg?style=social&label=Fork&link=https://github.com/sr6033/lterm/fork&link=https://github.com/sr6033/lterm/network)](https://github.com/sr6033/lterm/fork) this repo and edit the file **<a href="https://github.com/sr6033/lterm/blob/master/js/main.js">main.js</a>** to add your commands.
 - You don't have to worry about any other files or programs.
 
 ---
 
 - If a **command** doesn't need further steps:
 
-```
+```js
 // without argument
 ls: function() {
         this.echo('This is the ls command\n');
 }
 ```
 
-```
+```js
 // with argument
 echo: function(arg1) {
         this.echo('This is the echo command' + arg1 + '\n');
@@ -54,7 +54,7 @@ echo: function(arg1) {
 
 - If a **command** needs further steps:
 
-```
+```js
 cd: function(arg1) {
 	this.push(function(cmd, term) {
                 if(cmd == 'another_command')
