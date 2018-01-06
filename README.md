@@ -27,6 +27,8 @@ It is fully online and doesn't require any extra shitty access. Being an emulato
 - `clear`
 - `touch`
 - `cp`/`mv`
+- `rm`
+- `date`
 - `mkdir`
 
 ### Contributing
